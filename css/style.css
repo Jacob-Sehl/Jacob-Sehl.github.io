@@ -90,8 +90,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 100;
-    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    transition: transform 0.3s ease;
 }
 
 .sidebar-top {
@@ -511,21 +511,30 @@ img {
     }
     
     .mobile-trigger {
-        display: block;
         position: fixed;
         top: 1rem;
         left: 1rem;
-        z-index: 110;
-        background-color: var(--link-color);
-        color: white;
+        z-index: 1000;
         width: 40px;
         height: 40px;
-        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        border-radius: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+        -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    }
+    
+    .mobile-trigger:hover {
+        background-color: var(--hover-color);
+    }
+    
+    .mobile-trigger i {
+        font-size: 1.5rem;
     }
     
     .post {

@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu functionality
     const createMobileMenu = () => {
+        // Remove existing trigger if it exists
+        const existingTrigger = document.querySelector('.mobile-trigger');
+        if (existingTrigger) {
+            existingTrigger.remove();
+        }
+        
         // Create mobile menu trigger button
         const mobileMenuTrigger = document.createElement('div');
         mobileMenuTrigger.className = 'mobile-trigger';
@@ -10,8 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the sidebar element
         const sidebar = document.querySelector('.sidebar');
         
+        // Remove any existing click listeners
+        const newTrigger = document.querySelector('.mobile-trigger');
+        const newTriggerClone = newTrigger.cloneNode(true);
+        newTrigger.parentNode.replaceChild(newTriggerClone, newTrigger);
+        
         // Add click event to mobile trigger
-        mobileMenuTrigger.addEventListener('click', function() {
+        newTriggerClone.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
             sidebar.classList.toggle('show');
             this.innerHTML = sidebar.classList.contains('show') 
                 ? '<i class="fas fa-times"></i>' 
@@ -20,42 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!sidebar.contains(event.target) && !mobileMenuTrigger.contains(event.target)) {
+            if (!sidebar.contains(event.target) && !newTriggerClone.contains(event.target)) {
                 sidebar.classList.remove('show');
-                mobileMenuTrigger.innerHTML = '<i class="fas fa-bars"></i>';
+                newTriggerClone.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
-    };
-    
-    // Right sidebar toggle for medium screens
-    const createRightSidebarToggle = () => {
-        // Only create if it doesn't exist and the viewport is appropriate
-        if (window.innerWidth <= 1200 && !document.querySelector('.right-trigger')) {
-            // Create right sidebar trigger button
-            const rightSidebarTrigger = document.createElement('div');
-            rightSidebarTrigger.className = 'right-trigger';
-            rightSidebarTrigger.innerHTML = '<i class="fas fa-list-ul"></i>';
-            document.body.appendChild(rightSidebarTrigger);
-            
-            // Get the right sidebar element
-            const rightSidebar = document.querySelector('.right-sidebar');
-            
-            // Add click event to right sidebar trigger
-            rightSidebarTrigger.addEventListener('click', function() {
-                rightSidebar.classList.toggle('show');
-                this.innerHTML = rightSidebar.classList.contains('show') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-list-ul"></i>';
-            });
-            
-            // Close right sidebar when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!rightSidebar.contains(event.target) && !rightSidebarTrigger.contains(event.target)) {
-                    rightSidebar.classList.remove('show');
-                    rightSidebarTrigger.innerHTML = '<i class="fas fa-list-ul"></i>';
-                }
-            });
-        }
     };
     
     // TOC highlighting based on scroll position
@@ -183,11 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
         createMobileMenu();
     }
     
-    // Call the right sidebar toggle for medium screens
-    if (window.innerWidth <= 1200 && window.innerWidth > 768) {
-        createRightSidebarToggle();
-    }
-    
     // Setup TOC highlighting
     setupTOCHighlighting();
     
@@ -209,16 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             // Make sure sidebar is visible on desktop
             document.querySelector('.sidebar').classList.remove('show');
-        }
-        
-        if (window.innerWidth <= 1200 && window.innerWidth > 768) {
-            createRightSidebarToggle();
-        } else {
-            // Remove right trigger if it exists and not needed
-            const rightTrigger = document.querySelector('.right-trigger');
-            if (rightTrigger) {
-                rightTrigger.remove();
-            }
         }
     });
     
