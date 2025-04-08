@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob Sehl | Software Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="profile-wrapper">
+                    <div class="profile-image">
+                        <img src="img/IMG_9971.jpg" alt="Profile picture">
+                    </div>
+                    <div class="site-title">
+                        <a href="index.html">Jacob Sehl</a>
+                    </div>
+                    <div class="site-subtitle">Software Engineer</div>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active"><i class="fas fa-home fa-fw"></i> Home</a></li>
+                <li><a href="projects.html"><i class="fas fa-code-branch fa-fw"></i> Projects</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle fa-fw"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope fa-fw"></i> Contact</a></li>
+            </ul>
+            
+            <div class="focus-section">
+                <h2>Current Focus</h2>
+                <div class="focus-item">
+                    <span>🦀</span>
+                    <p>Rust &amp; WebAssembly</p>
+                </div>
+                <div class="focus-item">
+                    <span>🔧</span>
+                    <p>Embedded C</p>
+                </div>
+                <div class="focus-item">
+                    <span>🤖</span>
+                    <p>Machine Learning</p>
+                </div>
+                <div class="focus-item">
+                    <span>🎨</span>
+                    <p>Procedural Animation</p>
+                </div>
+            </div>
+            
+            <div class="sidebar-bottom">
+                <div class="social-links">
+                    <a href="https://github.com/Jacob-Sehl" target="_blank"><i class="fab fa-github"></i></a>
+                    <!-- <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a> -->
+                    <a href="https://twitter.com/jacob_sehl" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    © 2025 Jacob Sehl
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="post-heading">
+                    <h1>Welcome to My Portfolio</h1>
+                    <div class="post-meta">
+                        <i class="fas fa-calendar fa-fw"></i> 
+                        <span>Last updated: April 5, 2025</span>
+                    </div>
+                </div>
+                
+                <article class="post">
+                    <section class="intro-section" id="introduction">
+                        <h2>Introduction</h2>
+                        <p>Hello! I'm a passionate software developer interested in systems programming and machine learning. Take a look at some of my favorite projects!</p>
+                    </section>
+                    
+                    <section class="featured-projects" id="featured-projects">
+                        <h2>Featured Projects</h2>
+                        <div class="project-card">
+                            <h3>ASCII-Solar-System</h3>
+                            <p>A procedurally generated ASCI starfield in the browser. Originally designed for use in WallpaperEngine. </p>
+                            <div class="tags">
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://www.github.com/Jacob-Sehl/ascii-solar-system" class="btn-view-project" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Project
+                                </a>
+                                <button class="btn-live-preview" data-project-url="https://www.jacobsehl.com/ascii-solar-system/" data-project-title="ASCII-Solar-System">
+                                    <i class="fas fa-external-link-alt"></i> Live Preview
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3>A language app that doesnt suck</h3>
+                            <p>A web/mobile app designed to mimic the fun, aesthetics and social experience of duoLingo. With the poweruser freedom and spaced repitition functionalities of Anki, without the clunky and hard to use UI/UX.</p>
+                            <div class="tags">
+                                <span class="tag">Tauri</span>
+                                <span class="tag">Rust</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-view-project" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Currently locked in
+                                </a>
+<!-- <button class="btn-live-preview" data-project-url="#" data-project-title="Project Name 2">
+    <i class="fas fa-external-link-alt"></i> Live Preview
+</button> -->
+                               
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="skills-section" id="technical-skills">
+                        <h2>Technical Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category" id="languages">
+                                <h3>Languages</h3>
+                                <ul>
+                                    <li>JavaScript</li>
+                                    <li>Rust</li>
+                                    <li>Java</li>
+                                    <li>HTML/CSS</li>
+                                    <li>Learning C</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category" id="frameworks">
+                                <h3>Frameworks & Libraries</h3>
+                                <ul>
+                                    <li>React</li>
+                                    <li>Node.js</li>
+                                    <li>Express</li>
+                                    <li>Three.js</li>
+                                    <l>Tauri</l>
+                                </ul>
+                            </div>
+                            <div class="skill-category" id="tools">
+                                <h3>Tools & Technologies</h3>
+                                <ul>
+                                    <li>Git</li>
+                                    <li>Docker</li>
+                                    <li>Firebase</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </main>
+        
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <div class="right-sidebar-heading">Table of Contents</div>
+                <ul class="toc-list">
+                    <li class="toc-h2"><a href="#introduction">Introduction</a></li>
+                    <li class="toc-h2"><a href="#featured-projects">Featured Projects</a></li>
+                    <li class="toc-h2"><a href="#technical-skills">Technical Skills</a></li>
+                    <li class="toc-h3"><a href="#languages">Languages</a></li>
+                    <li class="toc-h3"><a href="#frameworks">Frameworks & Libraries</a></li>
+                    <li class="toc-h3"><a href="#tools">Tools & Technologies</a></li>
+                </ul>
+            </div>
+            
+            <!-- Categories -->
+            <!-- Categories section temporarily disabled
+            <div class="right-sidebar-categories">
+                <div class="right-sidebar-heading">Categories</div>
+                <div class="category-list">
+                    <div class="category-item">
+                        <a href="#">Web Development <span class="count">5</span></a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">Mobile Apps <span class="count">3</span></a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">Machine Learning <span class="count">2</span></a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">DevOps <span class="count">4</span></a>
+                    </div>
+                </div>
+            </div>
+            -->
+            
+            
+            <!-- Tags -->
+            <div class="right-sidebar-tags">
+                <div class="right-sidebar-heading">Tags</div>
+                <div class="tag-cloud">
+                    <div class="tag-item">
+                        <a href="#">JavaScript <span class="count">1</span></a>
+                    </div>
+                    <div class="tag-item">
+                        <a href="#">Rust <span class="count">1</span></a>
+                    </div>
+                    <div class="tag-item">
+                        <a href="#">Tauri <span class="count">1</span></a>
+                    </div>
+                </div>
+            </div>
+            
+        </aside>
+    </div>
+    
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fas fa-globe"></i> <span id="modalTitle">Project Preview</span>
+                </div>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-loading" id="modalLoading">
+                    <div class="spinner"></div>
+                </div>
+                <iframe class="modal-iframe" id="modalIframe" src="about:blank" title="Project Preview"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html> 
