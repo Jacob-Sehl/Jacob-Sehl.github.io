@@ -256,8 +256,36 @@
                 updateTheme(currentTheme === 'dark' ? 'light' : 'dark');
             }
             
+            // Initialize theme with system preference detection
+            function getInitialTheme() {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                
+                // Check system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    return 'light';
+                }
+                
+                // Default to dark if no preference detected
+                return 'dark';
+            }
+            
             // Initialize theme
-            updateTheme(localStorage.getItem('theme') || 'dark');
+            updateTheme(getInitialTheme());
+            
+            // Listen for system theme changes
+            if (window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    // Only auto-switch if user hasn't manually set a preference
+                    if (!localStorage.getItem('theme')) {
+                        updateTheme(e.matches ? 'dark' : 'light');
+                    }
+                });
+            }
             
             // Add event listeners
             document.getElementById('theme-toggle').addEventListener('click', toggleTheme);

@@ -18,6 +18,31 @@
     --border: #e5e7eb;
 }
 
+/* System preference fallback - applies when no data-theme is set */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --bg: #fafafa;
+        --text: #1a1a1a;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --accent-2: #16a34a;
+        --panel: #ffffff;
+        --border: #e5e7eb;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg: #000000;
+        --text: #e5e5e5;
+        --muted: #6b7280;
+        --accent: #3b82f6;
+        --accent-2: #22c55e;
+        --panel: #000000;
+        --border: #333333;
+    }
+}
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
