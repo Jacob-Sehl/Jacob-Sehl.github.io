@@ -209,8 +209,6 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
         hyphens: auto;
     }
     .accordion-meta {
-        display: flex;
-        justify-content: flex-end;
         margin-top: 4px;
     }
 }
