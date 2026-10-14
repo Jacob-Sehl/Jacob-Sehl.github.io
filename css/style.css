@@ -141,6 +141,8 @@ h1, h2, h3 { margin: 0; font-weight: 500; }
 
 .projects a { color: var(--text); text-decoration: none; }
 .projects a:hover { color: var(--accent); }
+.project-links { margin-top: 8px; }
+.project-links a { color: var(--accent); }
 
 .tech-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .tech-grid div { font-size: 0.8rem; }
